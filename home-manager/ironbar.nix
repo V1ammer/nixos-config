@@ -98,13 +98,13 @@
             {
               type = "label";
               name = "uptime";
-              label = "Uptime: {{30000:uptime -p | cut -d ' ' -f2-}}";
+              label = "Uptime: {{30000:uptime | cut -d ' ' -f2}}";
             }
           ];
         }
       ];
 
-      tooltip = "Up: {{30000:uptime -p | cut -d ' ' -f2-}}";
+      tooltip = "Up: {{30000:uptime | cut -d ' ' -f2}}";
     }
   ];
 }
