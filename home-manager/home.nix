@@ -41,7 +41,7 @@
       telemetry = {
         metrics = false;
       };
-      theme = "One Dark";
+      theme = "Tokyo Night";
     };
   };
 
