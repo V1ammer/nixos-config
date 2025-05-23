@@ -48,10 +48,6 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
   services.xserver.excludePackages = [pkgs.xterm];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -70,6 +66,7 @@
     pulse.enable = true;
   };
 
+  services.displayManager.cosmic-greeter.enable = true;
   services.upower.enable = true;
 
   users.users.killua = {
