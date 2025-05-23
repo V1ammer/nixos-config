@@ -27,11 +27,9 @@
     zellij
   ];
 
-  home.file.".config/rio/config.toml".text = ''
-    [window]
-    mode = "maximized"
-    opacity = 0.9
-  '';
+  home.file.".config/rio/themes/BlueBerryPie.toml".source = ./assets/rio/themes/BlueBerryPie.toml;
+  home.file.".config/rio/themes/TokyoNight.toml".source = ./assets/rio/themes/TokyoNight.toml;
+  home.file.".config/rio/config.toml".source = ./assets/rio/config.toml;
 
   programs.zed-editor = {
     enable = true;
