@@ -25,6 +25,15 @@
       specialArgs = {inherit inputs;};
       modules = [./configuration.nix ./hardware-configuration.nix];
     };
+    homeConfigurations.killua = inputs.home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        inputs.niri.homeModules.niri
+        inputs.ironbar.homeModules.ironbar
+        ./home-manager/home.nix
+      ];
+      extraSpecialArgs = {inherit inputs;};
+    };
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [nil];
     };
