@@ -17,9 +17,7 @@
     pavucontrol
     pcmanfm
     google-chrome
-    networkmanager-l2tp
     neovim
-    niri
     onlyoffice-bin
     telegram-desktop
     rio
