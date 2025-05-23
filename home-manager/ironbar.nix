@@ -24,8 +24,8 @@
       interval.cpu = 1;
 
       format = [
-        " {cpu_percent}%"
-        " {memory_percent}%"
+        "  {cpu_percent}%"
+        "  {memory_percent}%"
         " {temp_c:coretemp-Package-id-0}°C"
       ];
     }
