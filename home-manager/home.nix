@@ -15,7 +15,7 @@
     bottom
     fuzzel
     pavucontrol
-    pcmanfm
+    cosmic-files
     google-chrome
     neovim
     onlyoffice-bin
