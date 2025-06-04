@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ironbar.url = "github:JakeStanger/ironbar";
     niri.url = "github:sodiboo/niri-flake";
     zed.url = "github:zed-industries/zed";
   };
@@ -29,7 +28,6 @@
       inherit pkgs;
       modules = [
         inputs.niri.homeModules.niri
-        inputs.ironbar.homeModules.ironbar
         ./home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};

@@ -29,7 +29,6 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   services.printing.enable = false;
 
@@ -107,7 +106,6 @@
 
   home-manager.users.killua = {...}: {
     imports = [
-      inputs.ironbar.homeManagerModules.default
       inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];

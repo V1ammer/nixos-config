@@ -1,6 +1,0 @@
-theme = "TokyoNight"
-[window]
-mode = "maximized"
-opacity = 0.9
-decorations = "Disabled"
-blur = true
