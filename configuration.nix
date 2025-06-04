@@ -72,9 +72,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.enable = true;
-  programs.niri = {
-    enable = true;
-  };
+  programs.niri.enable = true;
   programs.amnezia-vpn.enable = true;
 
   fonts.packages = with pkgs; [nerd-fonts.hack];

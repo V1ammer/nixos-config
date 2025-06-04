@@ -77,6 +77,7 @@
     "Mod+Shift+T".action.spawn = "telegram-desktop";
     "Mod+Z".action.spawn = "zeditor";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
+    "Mod+V".action.spawn = "AmneziaVPN";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
       action.spawn = ["rio" "-e" "fish" "-c" "yazi"];
