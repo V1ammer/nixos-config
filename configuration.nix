@@ -76,8 +76,6 @@
     shell = pkgs.fish;
   };
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-
   nixpkgs.config.allowUnfree = true;
 
   programs.neovim = {
@@ -94,7 +92,6 @@
   };
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
   };
   programs.amnezia-vpn.enable = true;
 
