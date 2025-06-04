@@ -69,20 +69,11 @@
     isNormalUser = true;
     description = "Killua";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = [];
-    shell = pkgs.fish;
   };
 
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.enable = true;
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      export TERM=xterm-256color
-      starship init fish | source
-    '';
-  };
   programs.niri = {
     enable = true;
   };

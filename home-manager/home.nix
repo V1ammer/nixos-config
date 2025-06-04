@@ -33,6 +33,8 @@
 
   programs.zoxide.enable = true;
 
+  programs.fish.enable = true;
+
   programs.rio = {
     enable = true;
     settings = {
@@ -66,18 +68,21 @@
     extraConfig.init.defaultBranch = "master";
   };
 
+  home.sessionVariables = {
+    EDITOR = "hx";
+    TERM = "xterm-256color";
+  };
+
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
     };
-    enableFishIntegration = true;
   };
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-    enableFishIntegration = true;
   };
 
   services.wpaperd = {
