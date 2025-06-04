@@ -22,13 +22,22 @@
     onlyoffice-bin
     telegram-desktop
     xwayland-satellite
-    yazi
     zellij
   ];
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+    settings = {
+      manager = {
+        show_hidden = true;
+        show_symlink = true;
+      };
+    };
   };
 
   programs.zoxide.enable = true;
