@@ -71,7 +71,7 @@
   users.users.killua = {
     isNormalUser = true;
     description = "Killua";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = [];
     shell = pkgs.fish;
   };
