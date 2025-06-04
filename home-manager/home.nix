@@ -12,7 +12,11 @@
   home.packages = with pkgs; [
     (lib.hiPrio uutils-coreutils-noprefix)
     bottom
-    cosmic-files
+    cosmic-applets
+    cosmic-applibrary
+    cosmic-notifications
+    cosmic-panel
+    cosmic-settings
     fuzzel
     google-chrome
     networkmanagerapplet
