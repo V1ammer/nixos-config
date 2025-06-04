@@ -10,17 +10,17 @@
   home.homeDirectory = "/home/killua";
 
   home.packages = with pkgs; [
-    networkmanagerapplet
-    swaynotificationcenter
     bottom
-    fuzzel
-    pavucontrol
     cosmic-files
+    fuzzel
     google-chrome
-    neovim
+    networkmanagerapplet
     onlyoffice-bin
-    telegram-desktop
+    pavucontrol
     rio
+    swaynotificationcenter
+    telegram-desktop
+    xwayland-satellite
     yazi
     zellij
   ];
