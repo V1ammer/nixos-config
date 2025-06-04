@@ -49,8 +49,6 @@
 
   services.xserver.excludePackages = [pkgs.xterm];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   documentation.nixos.enable = false;
 
   services.pulseaudio.enable = false;
