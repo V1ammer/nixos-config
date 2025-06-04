@@ -101,6 +101,8 @@
     ];
   };
 
+  networking.firewall.enable = true;
+
   system.stateVersion = "25.11";
   system.autoUpgrade.enable = true;
 }
