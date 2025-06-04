@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     (lib.hiPrio uutils-coreutils-noprefix)
     bottom
+    brightnessctl
     cosmic-applets
     cosmic-applibrary
     cosmic-notifications

@@ -21,16 +21,13 @@
     };
     tablet.map-to-output = "eDP-1";
     touch.map-to-output = "eDP-1";
-    focus-follows-mouse.enable = true;
+    focus-follows-mouse.enable = false;
   };
+
+  hotkey-overlay.skip-at-startup = true;
 
   window-rules = [
     {
-      matches = [
-        {
-          is-active = false;
-        }
-      ];
       opacity = 0.95;
     }
   ];
@@ -38,21 +35,20 @@
   outputs."eDP-1" = {
     scale = 2.0;
     mode = {
-      width = 1920;
-      height = 1080;
-      refresh = 120.030;
+      width = 3840;
+      height = 2160;
+      refresh = 60.0;
     };
     position = {
-      x = 1280;
-      y = 0;
+      x = 1920;
+      y = 1080;
     };
+    # backdrop-color = "#9900ff";
   };
 
   layout = {
     focus-ring = {
-      width = 4;
-      active.color = "#7fc8ff";
-      inactive.color = "#505050";
+      enable = false;
     };
     border.enable = false;
     preset-column-widths = [
@@ -60,7 +56,7 @@
       {proportion = 1.0 / 2.0;}
       {proportion = 2.0 / 3.0;}
     ];
-    default-column-width.proportion = 0.5;
+    default-column-width.proportion = 1;
     gaps = 16;
     center-focused-column = "never";
   };
@@ -93,6 +89,8 @@
     "Super+Alt+L".action.spawn = "swaylock";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
+    "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "5%+"];
+    "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "set" "5%-"];
     "Mod+Q".action = close-window;
     "Mod+Left".action = focus-column-left;
     "Mod+Down".action = focus-window-or-workspace-down;
