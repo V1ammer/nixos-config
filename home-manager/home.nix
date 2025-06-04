@@ -25,11 +25,6 @@
     zellij
   ];
 
-  programs.helix = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   programs.yazi = {
     enable = true;
     settings = {
@@ -96,6 +91,8 @@
     };
   };
   programs.niri.settings = import ./niri.nix {config = config;};
+
+  programs.helix = import ./helix.nix {pkgs = pkgs;};
 
   xdg.portal = {
     enable = true;
