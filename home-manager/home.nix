@@ -68,11 +68,6 @@
     extraConfig.init.defaultBranch = "master";
   };
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-    TERM = "xterm-256color";
-  };
-
   programs.starship = {
     enable = true;
     settings = {
