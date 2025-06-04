@@ -29,6 +29,10 @@
     attachExistingSession = true;
     enableFishIntegration = true;
     exitShellOnExit = true;
+    settings = {
+      pane_frames = false;
+      show_startup_tips = false;
+    };
   };
 
   programs.yazi = {
@@ -60,6 +64,7 @@
         blur = true;
       };
       env-vars = ["TERM=xterm-256color"];
+      confirm-before-quit = false;
     };
   };
 
