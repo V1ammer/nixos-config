@@ -37,7 +37,12 @@
 
   programs.zoxide.enable = true;
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+  };
 
   programs.rio = {
     enable = true;
@@ -82,6 +87,7 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    silent = true;
   };
 
   services.wpaperd = {
