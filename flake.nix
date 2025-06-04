@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +22,11 @@
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [./configuration.nix ./hardware-configuration.nix];
+      modules = [
+        ./configuration.nix
+        ./hardware-configuration.nix
+        inputs.chaotic.homeManagerModules.default
+      ];
     };
     homeConfigurations.killua = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
@@ -32,7 +37,7 @@
       extraSpecialArgs = {inherit inputs;};
     };
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [nil];
+      packages = with pkgs; [nil nixd];
     };
   };
 }

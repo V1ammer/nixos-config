@@ -9,9 +9,16 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
+  services.scx.enable = true;
   services.gvfs.enable = true;
   services.earlyoom.enable = true;
+
+  boot.kernelParams = [
+    "acpi_backlight=amdgpu"
+    "amdgpu.dc=1"
+  ];
 
   nix = {
     gc = {
