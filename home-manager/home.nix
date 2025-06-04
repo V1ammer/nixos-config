@@ -4,7 +4,6 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
-  home.enableNixpkgsReleaseCheck = false;
 
   home.username = "killua";
   home.homeDirectory = "/home/killua";
