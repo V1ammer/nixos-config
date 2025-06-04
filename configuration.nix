@@ -11,6 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.gvfs.enable = true;
+  services.earlyoom.enable = true;
 
   nix = {
     gc = {
