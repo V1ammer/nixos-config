@@ -10,6 +10,7 @@
   home.homeDirectory = "/home/killua";
 
   home.packages = with pkgs; [
+    (lib.hiPrio uutils-coreutils-noprefix)
     bottom
     cosmic-files
     fuzzel
