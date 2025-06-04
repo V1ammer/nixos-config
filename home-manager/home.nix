@@ -55,6 +55,7 @@
         metrics = false;
       };
       theme = "Tokyo Night";
+      format_on_save = "off";
     };
   };
 
