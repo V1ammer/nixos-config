@@ -22,8 +22,14 @@
     onlyoffice-bin
     telegram-desktop
     xwayland-satellite
-    zellij
   ];
+
+  programs.zellij = {
+    enable = true;
+    attachExistingSession = true;
+    enableFishIntegration = true;
+    exitShellOnExit = true;
+  };
 
   programs.yazi = {
     enable = true;
