@@ -21,14 +21,24 @@
     google-chrome
     networkmanagerapplet
     onlyoffice-bin
-    pavucontrol
-    rio
-    swaynotificationcenter
     telegram-desktop
     xwayland-satellite
     yazi
     zellij
   ];
+
+  programs.rio = {
+    enable = true;
+    settings = {
+      theme = "TokyoNight";
+      window = {
+        decorations = "Disabled";
+        mode = "maximized";
+        blur = true;
+      };
+      env-vars = ["TERM=xterm-256color"];
+    };
+  };
 
   programs.zed-editor = {
     enable = true;
