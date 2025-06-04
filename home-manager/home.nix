@@ -27,6 +27,13 @@
     zellij
   ];
 
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  programs.zoxide.enable = true;
+
   programs.rio = {
     enable = true;
     settings = {
@@ -80,6 +87,15 @@
     };
   };
   programs.niri.settings = import ./niri.nix {config = config;};
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-termfilechooser
+      xdg-desktop-portal-gtk
+    ];
+  };
 
   home.stateVersion = "25.11";
 }
