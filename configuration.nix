@@ -78,10 +78,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
   programs.nix-ld.enable = true;
   programs.fish = {
     enable = true;
