@@ -55,6 +55,8 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
+
   services.xserver.excludePackages = [pkgs.xterm];
 
   documentation.nixos.enable = false;
