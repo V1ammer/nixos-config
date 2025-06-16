@@ -10,6 +10,31 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.blacklistedKernelModules = [
+    # Obscure network protocols
+    "ax25" "netrom" "rose"
+    # Old or rare or insufficiently audited filesystems
+    "adfs" "affs" "bfs" "befs" "cifs" "cramfs" "efs" "erofs" "exofs"
+    "freevxfs" "f2fs" "gfs2" "hfs" "hfsplus" "hpfs" "jffs2" "jfs" "ksmbd"
+    "minix" "nfsv4" "nfsv3" "nfs" "omfs" "qnx4" "qnx6" "squashfs" "sysv"
+    "udf" "vivid" "nilfs2"
+    # Something else
+    "af_802154" "appletalk" "atm" "can" "dccp" "decnet" "econet"
+    "firewire-core" "ipx" "n-hdlc" "p8022" "p8023" "psnap"
+    "rds" "sctp" "thunderbolt" "tipc" "x25"
+    # Bluetooth
+    "bluetooth" "btusb" "btrtl" "btintel" "btbcm" "btmtk"
+    # Unused sensors
+    "kfifo_buf" "industrialio" "industrialio_triggered_buffer" "cm32181"
+    "hid_sensor_als" "hid_sensor_hub" "hid_sensor_trigger" "hid_sensor_iio_common"
+    # Unused io
+    "joydev" # joystick
+    "mac_hid" # mac mouse
+    "ee1004" # spd eeprom
+    "loop" # loop mounted devices
+    # FireWire
+    "firewire-core" "firewire-ohci" "firewire-sbp2"
+  ];
 
   services.scx.enable = true;
   services.gvfs.enable = true;
