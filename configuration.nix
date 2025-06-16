@@ -35,8 +35,8 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable = false;
+  hardware.bluetooth.powerOnBoot = false;
 
   services.printing.enable = false;
 
