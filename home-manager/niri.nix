@@ -29,6 +29,12 @@
   window-rules = [
     {
       opacity = 0.95;
+      draw-border-with-background = false;
+      clip-to-geometry = true;
+      geometry-corner-radius.bottom-left = 10.0;
+      geometry-corner-radius.bottom-right = 10.0;
+      geometry-corner-radius.top-left = 10.0;
+      geometry-corner-radius.top-right = 10.0;
     }
   ];
 
@@ -43,20 +49,22 @@
       x = 1920;
       y = 1080;
     };
-    # backdrop-color = "#9900ff";
   };
 
   layout = {
-    focus-ring = {
-      enable = false;
+    focus-ring.enable = false;
+    insert-hint.display.color = "rgb(153, 0, 255 / 50%)";
+    border = {
+      enable = true;
+      width = 2;
+      active.color = "#4c0080";
     };
-    border.enable = false;
     preset-column-widths = [
       {proportion = 1.0 / 3.0;}
       {proportion = 1.0 / 2.0;}
       {proportion = 2.0 / 3.0;}
     ];
-    default-column-width.proportion = 1;
+    default-column-width.proportion = 1.0 / 1.0;
     gaps = 16;
     center-focused-column = "never";
   };
@@ -86,7 +94,6 @@
       hotkey-overlay.title = "Spawn bottom";
       action.spawn = ["rio" "-e" "btm"];
     };
-    "Super+Alt+L".action.spawn = "swaylock";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
     "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "5%+"];
