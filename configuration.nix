@@ -76,17 +76,17 @@
   services.displayManager.cosmic-greeter.enable = true;
   services.upower.enable = true;
 
+  programs.fish.enable = true;
+  programs.nix-ld.enable = true;
+  programs.niri.enable = true;
+  programs.amnezia-vpn.enable = true;
+
   users.users.killua = {
     isNormalUser = true;
     description = "Killua";
     extraGroups = ["networkmanager" "wheel" "docker"];
+    shell = pkgs.fish;
   };
-
-  nixpkgs.config.allowUnfree = true;
-
-  programs.nix-ld.enable = true;
-  programs.niri.enable = true;
-  programs.amnezia-vpn.enable = true;
 
   fonts.packages = with pkgs; [nerd-fonts.hack];
 

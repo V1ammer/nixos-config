@@ -5,6 +5,8 @@
 }: {
   nixpkgs.config.allowUnfree = true;
 
+  home.enableNixpkgsReleaseCheck = false;
+
   home.username = "killua";
   home.homeDirectory = "/home/killua";
 
@@ -13,7 +15,6 @@
     bottom
     brightnessctl
     cosmic-applets
-    cosmic-applibrary
     cosmic-notifications
     cosmic-panel
     cosmic-settings
@@ -33,39 +34,6 @@
     settings = {
       pane_frames = false;
       show_startup_tips = false;
-    };
-  };
-
-  programs.yazi = {
-    enable = true;
-    settings = {
-      mgr = {
-        show_hidden = true;
-        show_symlink = true;
-      };
-    };
-  };
-
-  programs.zoxide.enable = true;
-
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting
-    '';
-  };
-
-  programs.rio = {
-    enable = true;
-    settings = {
-      theme = "TokyoNight";
-      window = {
-        decorations = "Disabled";
-        mode = "maximized";
-        blur = true;
-      };
-      env-vars = ["TERM=xterm-256color"];
-      confirm-before-quit = false;
     };
   };
 
@@ -89,10 +57,46 @@
     extraConfig.init.defaultBranch = "master";
   };
 
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+  };
+
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
+    };
+    enableFishIntegration = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+    settings = {
+      mgr = {
+        show_hidden = true;
+        show_symlink = true;
+      };
+    };
+  };
+
+  programs.zoxide.enable = true;
+
+  home.file.".config/rio/themes/TokyoNight.toml".source = ./assets/rio_themes/TokyoNight.toml;
+
+  programs.rio = {
+    enable = true;
+    settings = {
+      theme = "TokyoNight";
+      window = {
+        decorations = "Disabled";
+        mode = "maximized";
+        blur = true;
+      };
+      env-vars = ["TERM=xterm-256color"];
+      confirm-before-quit = false;
     };
   };
 
