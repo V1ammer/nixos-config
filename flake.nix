@@ -12,7 +12,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zed.url = "github:zed-industries/zed";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
