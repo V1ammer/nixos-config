@@ -59,7 +59,10 @@
 
   services.xserver.excludePackages = [pkgs.xterm];
 
-  documentation.nixos.enable = false;
+  documentation = {
+    nixos.enable = false;
+    man.generateCaches = false;
+  };
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
