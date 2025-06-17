@@ -35,15 +35,20 @@
     # FireWire
     "firewire-core" "firewire-ohci" "firewire-sbp2"
   ];
+  boot.kernelParams = [
+    "acpi_backlight=amdgpu"
+    "amdgpu.dc=1"
+  ];
 
   services.scx.enable = true;
   services.gvfs.enable = true;
   services.earlyoom.enable = true;
 
-  boot.kernelParams = [
-    "acpi_backlight=amdgpu"
-    "amdgpu.dc=1"
-  ];
+  services.thermald = {
+    enable = true;
+    ignoreCpuidCheck = true;
+  };
+  services.tlp.enable = true;
 
   nix = {
     gc = {
