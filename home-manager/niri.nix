@@ -1,4 +1,6 @@
 {config, ...}: {
+  prefer-no-csd = true;
+
   spawn-at-startup = [
     {command = ["xwayland-satellite" ":12"];}
     {command = ["cosmic-notifications"];}
@@ -77,9 +79,7 @@
     "Mod+T".action.spawn = "rio";
     "Mod+D".action.spawn = "fuzzel";
     "Mod+B".action.spawn = "google-chrome-stable";
-    "Mod+S".action.spawn = "cosmic-settings";
-    "Mod+Shift+T".action.spawn = "telegram-desktop";
-    "Mod+Z".action.spawn = "zeditor";
+    "Mod+Shift+T".action.spawn = "Telegram";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
     "Mod+V".action.spawn = "AmneziaVPN";
     "Mod+Y" = {

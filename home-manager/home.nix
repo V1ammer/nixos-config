@@ -17,7 +17,6 @@
     cosmic-applets
     cosmic-notifications
     cosmic-panel
-    cosmic-settings
     fuzzel
     google-chrome
     networkmanagerapplet
@@ -34,19 +33,6 @@
     settings = {
       pane_frames = false;
       show_startup_tips = false;
-    };
-  };
-
-  programs.zed-editor = {
-    enable = true;
-    extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
-    userSettings = {
-      vim_mode = true;
-      telemetry = {
-        metrics = false;
-      };
-      theme = "Tokyo Night";
-      format_on_save = "off";
     };
   };
 
@@ -91,7 +77,6 @@
     settings = {
       theme = "TokyoNight";
       window = {
-        decorations = "Disabled";
         mode = "maximized";
         blur = true;
       };
