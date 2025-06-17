@@ -113,6 +113,10 @@
     shell = pkgs.fish;
   };
 
+  # niri-flake adds it on nixos level,Add commentMore actions
+  # but I wish to configure it on home-manager level
+  xdg.portal.enable = false;
+  
   fonts.packages = with pkgs; [nerd-fonts.hack];
 
   virtualisation.docker.enable = true;
