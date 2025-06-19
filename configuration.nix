@@ -39,7 +39,7 @@
     "acpi_backlight=amdgpu"
     "amdgpu.dc=1"
   ];
-
+  
   services.scx.enable = true;
   services.gvfs.enable = true;
   services.earlyoom.enable = true;
@@ -122,8 +122,6 @@
   # but I wish to configure it on home-manager level
   xdg.portal.enable = false;
   
-  fonts.packages = with pkgs; [nerd-fonts.hack];
-
   virtualisation.docker.enable = true;
 
   home-manager.backupFileExtension = "backup";

@@ -19,11 +19,14 @@
     cosmic-panel
     fuzzel
     google-chrome
+    nerd-fonts.hack
     networkmanagerapplet
     onlyoffice-bin
     telegram-desktop
     xwayland-satellite
   ];
+
+  fonts.fontconfig.enable = true;
 
   programs.zellij = {
     enable = true;
@@ -76,6 +79,9 @@
     enable = true;
     settings = {
       theme = "TokyoNight";
+      fonts.regular = {
+        family = "Hack Nerd Font";
+      };
       window = {
         mode = "maximized";
         blur = true;
