@@ -40,6 +40,15 @@
     }
   ];
 
+  layer-rules = [{
+    matches = [{
+      namespace = "wpaperd";
+    }];
+    place-within-backdrop = true;
+  }];
+
+  overview.workspace-shadow.enable = false;
+
   outputs."eDP-1" = {
     scale = 2.0;
     mode = {
@@ -54,6 +63,7 @@
   };
 
   layout = {
+    background-color = "transparent";
     focus-ring.enable = false;
     insert-hint.display.color = "rgb(153, 0, 255 / 50%)";
     border = {
