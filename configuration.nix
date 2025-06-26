@@ -2,7 +2,23 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+let
+  battery-alert = pkgs.writeScriptBin "battery-alert" ''
+    #!/bin/sh
+    while true; do
+      state=$(${pkgs.upower}/bin/upower -i $(${pkgs.upower}/bin/upower -e | grep battery) | grep "state" | ${pkgs.gawk}/bin/awk '{print $2}')
+      percentage=$(${pkgs.upower}/bin/upower -i $(${pkgs.upower}/bin/upower -e | grep battery) | grep "percentage" | ${pkgs.gawk}/bin/awk '{print $2}' | tr -d '%')
+
+      if [ "$state" = "discharging" ] && [ "$percentage" -le 10 ]; then
+        ${pkgs.toastify}/bin/toastify send "🔋 Low Battery!" "Battery is at $percentage%. Connect charger!" -u critical -t 10000
+      fi
+
+      sleep 60
+    done
+  '';
+in
+  {
   imports = [
     inputs.home-manager.nixosModules.default
   ];
@@ -59,6 +75,20 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
+    };
+  };
+
+  services.dbus.enable = true;
+  environment.systemPackages = [ battery-alert ];
+  systemd.user.services.battery-notify = {
+    enable = true;
+    description = "Battery level notifier";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${battery-alert}/bin/battery-alert";
+      Restart = "always";
+      RestartSec = 10;
     };
   };
 

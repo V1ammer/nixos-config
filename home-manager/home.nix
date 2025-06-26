@@ -24,6 +24,7 @@
     networkmanagerapplet
     onlyoffice-bin
     telegram-desktop
+    toastify
     xwayland-satellite
   ];
 
