@@ -52,10 +52,12 @@ in
     "firewire-core" "firewire-ohci" "firewire-sbp2"
   ];
   boot.kernelParams = [
+    "mitigations=off"
+
     "acpi_backlight=amdgpu"
     "amdgpu.dc=1"
   ];
-  
+
   services.scx.enable = true;
   services.gvfs.enable = true;
   services.earlyoom.enable = true;
