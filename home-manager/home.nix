@@ -40,6 +40,25 @@
     uv
   ];
 
+  programs.zed-editor = {
+    enable = true;
+    package = pkgs.zed-editor_git;
+    extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
+    userSettings = {
+      vim_mode = true;
+      telemetry = {
+        metrics = false;
+      };
+      theme = "One Dark";
+      format_on_save = "off";
+      remove_trailing_whitespace_on_save = false;
+      ensure_final_newline_on_save = false;
+      features = {
+        edit_prediction_provider = "none";
+      };
+    };
+  };
+
   fonts.fontconfig.enable = true;
 
   programs.zellij = {
