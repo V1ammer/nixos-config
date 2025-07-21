@@ -40,6 +40,13 @@
     uv
   ];
 
+  programs.alacritty = {
+    package = pkgs.alacritty-graphics;
+    enable = true;
+    theme = "tokyo_night";
+    settings.env.TERM = "xterm-256color";
+  };
+
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor_git;
@@ -105,24 +112,6 @@
 
   programs.zoxide.enable = true;
 
-  home.file.".config/rio/themes/TokyoNight.toml".source = ./assets/rio_themes/TokyoNight.toml;
-
-  programs.rio = {
-    enable = true;
-    settings = {
-      theme = "TokyoNight";
-      fonts.regular = {
-        family = "Hack Nerd Font";
-      };
-      window = {
-        mode = "maximized";
-        blur = true;
-      };
-      env-vars = ["TERM=xterm-256color"];
-      confirm-before-quit = false;
-    };
-  };
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -179,7 +168,7 @@
 
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
     [filechooser]
-    env=TERMCMD="rio -e"
+    env=TERMCMD="alacritty -e"
     cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     default_dir=$HOME/Downloads
   '';
