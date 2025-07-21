@@ -10,6 +10,16 @@
   home.username = "killua";
   home.homeDirectory = "/home/killua";
 
+  services.battery-notifier = {
+    enable = true;
+    settings = {
+      interval_ms = 1000;
+      reminder = {threshold = 15;};
+      warn = {threshold = 10;};
+      threat = {threshold = 5;};
+    };
+  };
+
   home.packages = with pkgs; [
     bottom
     brightnessctl

@@ -12,6 +12,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    battery-notifier = {
+      url = "github:V1ammer/battery-notifier/fix-battery-id-selector";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
