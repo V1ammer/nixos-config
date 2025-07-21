@@ -10,6 +10,8 @@
   environment = {
     DISPLAY = ":12";
     NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "gnome";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   input = {
