@@ -77,6 +77,7 @@
   };
 
   environment.defaultPackages = [];
+  environment.memoryAllocator.provider = "jemalloc";
 
   networking.hostName = "nixos";
   networking.networkmanager = {
