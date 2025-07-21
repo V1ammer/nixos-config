@@ -28,6 +28,7 @@
     cosmic-notifications
     cosmic-panel
     cosmic-settings
+    delta
     google-chrome
     nerd-fonts.hack
     networkmanagerapplet
@@ -53,7 +54,17 @@
     enable = true;
     userEmail = "v1lammer@gmail.com";
     userName = "V1ammer";
-    extraConfig.init.defaultBranch = "master";
+    extraConfig = {
+      init.defaultBranch = "master";
+      pull.rebase = true;
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta = {
+        navigate = true;  # use n and N to move between diff sections
+        dark = true;
+      };
+      merge.conflictstyle = "zdiff3";
+    };
   };
 
   programs.fish = {
