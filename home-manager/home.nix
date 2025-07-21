@@ -11,13 +11,13 @@
   home.homeDirectory = "/home/killua";
 
   home.packages = with pkgs; [
-    (lib.hiPrio uutils-coreutils-noprefix)
     bottom
     brightnessctl
+    comma
     cosmic-applets
     cosmic-notifications
     cosmic-panel
-    fuzzel
+    cosmic-settings
     google-chrome
     nerd-fonts.hack
     networkmanagerapplet
@@ -25,6 +25,8 @@
     telegram-desktop
     toastify
     xwayland-satellite
+    uutils-coreutils-noprefix
+    uv
   ];
 
   fonts.fontconfig.enable = true;
