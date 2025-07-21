@@ -145,10 +145,13 @@ in
   services.displayManager.cosmic-greeter.enable = true;
   services.upower.enable = true;
 
+  programs.amnezia-vpn.enable = true;
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
-  programs.niri.enable = true;
-  programs.amnezia-vpn.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri_git;
+  };
 
   users.users.killua = {
     isNormalUser = true;
@@ -168,6 +171,7 @@ in
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.killua = {...}: {
     imports = [
+      inputs.chaotic.homeManagerModules.default
       inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];

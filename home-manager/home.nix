@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -93,30 +92,35 @@
       path = ./assets/material.jpg;
     };
   };
-  programs.niri.settings = import ./niri.nix {config = config;};
+
+  programs.niri = {
+    package = pkgs.niri_git;
+    settings = import ./niri.nix {config = config;};
+  };
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = inputs.helix.packages.${pkgs.system}.default;
+    package = pkgs.helix_git;
     settings.theme = "tokyonight";
     extraPackages = with pkgs; [
+      gcc
       nil
       nixd
       cargo
       rust-analyzer
       ruff
       pyright
+      ty
       tinymist
     ];
     languages.language = [
       {
         name = "python";
-        language-servers = ["pyright" "ruff"];
+        language-servers = ["pyright" "ruff" "ty"];
       }
     ];
   };
-  
 
   xdg.portal = {
     enable = true;

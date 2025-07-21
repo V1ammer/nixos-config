@@ -12,10 +12,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -34,6 +30,7 @@
     homeConfigurations.killua = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
+        inputs.chaotic.homeManagerModules.default
         inputs.niri.homeModules.niri
         ./home-manager/home.nix
       ];
