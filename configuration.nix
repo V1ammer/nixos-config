@@ -99,6 +99,8 @@ in
     };
   };
 
+  environment.defaultPackages = [];
+
   services.dbus.enable = true;
   environment.systemPackages = [ battery-alert ];
   systemd.user.services.battery-notify = {
