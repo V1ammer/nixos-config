@@ -68,6 +68,16 @@ in
   };
   services.tlp.enable = true;
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
+        user = "greeter";
+      };
+    };
+  };
+
   security = {
     sudo.enable = false;
     sudo-rs = {
@@ -144,7 +154,6 @@ in
     pulse.enable = true;
   };
 
-  services.displayManager.cosmic-greeter.enable = true;
   services.upower.enable = true;
 
   programs.amnezia-vpn.enable = true;
