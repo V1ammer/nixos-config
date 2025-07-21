@@ -34,7 +34,6 @@
     networkmanagerapplet
     onlyoffice-bin
     telegram-desktop
-    toastify
     xwayland-satellite
     uutils-coreutils-noprefix
     uv
