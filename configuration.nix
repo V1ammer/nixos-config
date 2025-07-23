@@ -127,6 +127,8 @@
 
   services.upower.enable = true;
 
+  powerManagement.powertop.enable = true;
+
   programs.amnezia-vpn.enable = true;
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
