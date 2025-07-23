@@ -42,16 +42,18 @@
     "amdgpu.dc=1"
   ];
 
-  services.dbus.enable = true;
-  services.scx.enable = true;
-  services.gvfs.enable = true;
   systemd.oomd.enable = true;
-
+  services.dbus.enable = true;
+  services.gvfs.enable = true;
+  services.tlp.enable = true;
+  services.scx = {
+    enable = true;
+    package = pkgs.scx.rustscheds;
+  };
   services.thermald = {
     enable = true;
     ignoreCpuidCheck = true;
   };
-  services.tlp.enable = true;
 
   services.displayManager.lemurs.enable = true;
 
