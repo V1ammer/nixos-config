@@ -45,7 +45,7 @@
   services.dbus.enable = true;
   services.scx.enable = true;
   services.gvfs.enable = true;
-  services.earlyoom.enable = true;
+  systemd.oomd.enable = true;
 
   services.thermald = {
     enable = true;
