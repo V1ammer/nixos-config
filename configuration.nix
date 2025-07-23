@@ -16,8 +16,8 @@
     # Old or rare or insufficiently audited filesystems
     "adfs" "affs" "bfs" "befs" "cifs" "cramfs" "efs" "erofs" "exofs"
     "freevxfs" "f2fs" "gfs2" "hfs" "hfsplus" "hpfs" "jffs2" "jfs" "ksmbd"
-    "minix" "nfsv4" "nfsv3" "nfs" "omfs" "qnx4" "qnx6" "squashfs" "sysv"
-    "udf" "vivid" "nilfs2"
+    "minix" "nfsv4" "nfsv3" "nfs" "nilfs2" "omfs" "qnx4" "qnx6" "squashfs" "sysv"
+    "udf" "ufs" "vivid"
     # Something else
     "af_802154" "appletalk" "atm" "can" "dccp" "decnet" "econet"
     "firewire-core" "ipx" "n-hdlc" "p8022" "p8023" "psnap"
