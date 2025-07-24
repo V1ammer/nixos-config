@@ -25,7 +25,6 @@
     brightnessctl
     comma
     cosmic-applets
-    cosmic-notifications
     cosmic-panel
     cosmic-settings
     delta
@@ -33,6 +32,7 @@
     nerd-fonts.hack
     networkmanagerapplet
     onlyoffice-bin
+    swaynotificationcenter
     telegram-desktop
     xwayland-satellite
     uutils-coreutils-noprefix
