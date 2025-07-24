@@ -26,7 +26,6 @@
     comma
     cosmic-applets
     cosmic-panel
-    cosmic-settings
     delta
     google-chrome
     nerd-fonts.hack
