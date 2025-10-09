@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
@@ -166,7 +167,7 @@
 
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
     [filechooser]
-    env=TERMCMD="alacritty -e"
+    env=TERMCMD="${lib.getExe pkgs.alacritty-graphics} -e"
     cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     default_dir=$HOME/Downloads
   '';
