@@ -149,16 +149,20 @@
     ripgrep-all
   ];
 
-  networking.hostName = "nixos";
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-l2tp
-    ];
+  networking = {
+    hostName = "nixos";
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-l2tp
+      ];
+    };
   };
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   services.printing.enable = false;
 
