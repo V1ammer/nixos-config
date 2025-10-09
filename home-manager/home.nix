@@ -29,7 +29,6 @@
     cosmic-panel
     delta
     google-chrome
-    nerd-fonts.hack
     networkmanagerapplet
     onlyoffice-bin
     swaynotificationcenter
@@ -64,8 +63,6 @@
       };
     };
   };
-
-  fonts.fontconfig.enable = true;
 
   programs.zellij = {
     enable = true;

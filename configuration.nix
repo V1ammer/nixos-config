@@ -103,6 +103,18 @@
     };
   };
 
+  fonts = {
+    packages = with pkgs; [ nerd-fonts.hack ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Hack" ];
+        sansSerif = [ "Hack" ];
+        serif = [ "Hack" ];
+      };
+    };
+  };
+
   environment.defaultPackages = [];
 
   networking.hostName = "nixos";
