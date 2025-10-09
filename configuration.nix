@@ -56,6 +56,11 @@
     ignoreCpuidCheck = true;
   };
 
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
+
   services.greetd = {
     enable = true;
     settings = {
