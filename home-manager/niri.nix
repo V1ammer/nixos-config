@@ -89,7 +89,6 @@
   binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
     "Mod+T".action.spawn = "alacritty";
-    "Mod+D".action.spawn = "fuzzel";
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+Shift+T".action.spawn = "Telegram";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
