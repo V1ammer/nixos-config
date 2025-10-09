@@ -138,14 +138,13 @@
       cargo
       rust-analyzer
       ruff
-      pyright
       ty
       tinymist
     ];
     languages.language = [
       {
         name = "python";
-        language-servers = ["pyright" "ruff" "ty"];
+        language-servers = ["ruff" "ty"];
       }
     ];
   };
