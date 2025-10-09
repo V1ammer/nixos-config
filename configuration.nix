@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   lib,
@@ -116,6 +117,37 @@
   };
 
   environment.defaultPackages = [];
+  environment.corePackages = with pkgs; lib.mkForce [
+    acl
+    attr
+    bashInteractive # bash with ncurses support
+    bzip2
+    curl
+    stdenv.cc.libc
+    getent
+    getconf
+    gnused
+    gnutar
+    gzip
+    xz
+    less
+    libcap
+    ncurses
+    netcat # snicat(go)
+    config.programs.ssh.package
+    mkpasswd
+    procps
+    su
+    time
+    util-linux
+    which
+    zstd
+
+    uutils-coreutils-noprefix
+    uutils-diffutils
+    uutils-findutils
+    ripgrep-all
+  ];
 
   networking.hostName = "nixos";
   networking.networkmanager = {

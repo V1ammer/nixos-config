@@ -34,7 +34,6 @@
     swaynotificationcenter
     telegram-desktop
     xwayland-satellite
-    uutils-coreutils-noprefix
     uv
   ];
 
