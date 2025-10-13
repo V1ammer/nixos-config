@@ -35,6 +35,10 @@
     telegram-desktop
     xwayland-satellite
     uv
+    ruff
+    ty
+    nil
+    nixd
   ];
 
   programs.alacritty = {
@@ -49,7 +53,7 @@
     package = pkgs.zed-editor_git;
     extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
     userSettings = {
-      vim_mode = true;
+      helix_mode = true;
       telemetry = {
         metrics = false;
       };
@@ -59,6 +63,25 @@
       ensure_final_newline_on_save = false;
       features = {
         edit_prediction_provider = "none";
+      };
+      languages = {
+        Python = {
+          language_servers = ["ty" "ruff"];
+        };
+      };
+      lsp = {
+        ty = {
+          binary = {
+            path = "${lib.getExe pkgs.ty}";
+            arguments = ["server"];
+          };
+        };
+        ruff = {
+          binary = {
+            path = "${lib.getExe pkgs.ruff}";
+            arguments = ["server"];
+          };
+        };
       };
     };
   };
@@ -124,19 +147,9 @@
     settings.theme = "tokyonight";
     extraPackages = with pkgs; [
       gcc
-      nil
-      nixd
       cargo
       rust-analyzer
-      ruff
-      ty
       tinymist
-    ];
-    languages.language = [
-      {
-        name = "python";
-        language-servers = ["ruff" "ty"];
-      }
     ];
   };
 
