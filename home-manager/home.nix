@@ -63,14 +63,6 @@
     };
   };
 
-  programs.zellij = {
-    enable = true;
-    settings = {
-      pane_frames = false;
-      show_startup_tips = false;
-    };
-  };
-
   programs.git = {
     enable = true;
     userEmail = "v1lammer@gmail.com";
@@ -81,7 +73,7 @@
       core.pager = "delta";
       interactive.diffFilter = "delta --color-only";
       delta = {
-        navigate = true;  # use n and N to move between diff sections
+        navigate = true;
         dark = true;
       };
       merge.conflictstyle = "zdiff3";
