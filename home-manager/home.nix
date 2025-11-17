@@ -33,6 +33,7 @@
     onlyoffice-bin
     swaynotificationcenter
     telegram-desktop
+    v2rayn
     xwayland-satellite
     uv
     ruff

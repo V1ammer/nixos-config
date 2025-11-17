@@ -149,8 +149,12 @@
     ripgrep-all
   ];
 
+  services.resolved.enable = true;
+
   networking = {
     hostName = "nixos";
+    firewall.enable = true;
+    nameservers = ["8.8.8.8" "1.1.1.1"];
     wireless.iwd = {
       enable = true;
     };
@@ -163,6 +167,7 @@
       plugins = with pkgs; [
         networkmanager-l2tp
       ];
+      dns = "systemd-resolved";
     };
   };
 
@@ -207,7 +212,6 @@
 
   services.upower.enable = true;
 
-  programs.amnezia-vpn.enable = true;
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
   programs.niri = {
@@ -239,8 +243,6 @@
       ./home-manager/home.nix
     ];
   };
-
-  networking.firewall.enable = true;
 
   system.stateVersion = "25.11";
 }

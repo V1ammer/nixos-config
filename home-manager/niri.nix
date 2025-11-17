@@ -90,7 +90,7 @@
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+Shift+T".action.spawn = "Telegram";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
-    "Mod+V".action.spawn = "AmneziaVPN";
+    "Mod+V".action.spawn = "v2rayN";
     "Mod+Z".action.spawn = "zeditor";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
