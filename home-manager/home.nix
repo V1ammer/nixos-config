@@ -88,9 +88,9 @@
 
   programs.git = {
     enable = true;
-    userEmail = "v1lammer@gmail.com";
-    userName = "V1ammer";
-    extraConfig = {
+    settings.user = {
+      email = "v1lammer@gmail.com";
+      name = "V1ammer";
       init.defaultBranch = "master";
       pull.rebase = true;
       core.pager = "delta";
