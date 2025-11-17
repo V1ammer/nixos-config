@@ -187,8 +187,8 @@
     "Mod+Shift+Equal".action.set-window-height = "+10%";
     "Mod+Space".action.switch-layout = "next";
     "Mod+Shift+Space".action.switch-layout = "prev";
-    "Print".action = screenshot;
-    "Alt+Print".action = screenshot-window;
+    "Print".action.screenshot = [];
+    "Alt+Print".action.screenshot-window = [];
     "Mod+Shift+E".action = quit;
     "Mod+Shift+P".action = power-off-monitors;
   };
