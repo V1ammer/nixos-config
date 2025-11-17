@@ -52,6 +52,17 @@
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.cpu.intel.sgx.enableDcapCompat = false;
+  hardware = {
+    cpu = {
+      amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      intel.sgx.enableDcapCompat = false;
+    };
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [ mesa.opencl ];
+    };
+  };
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
+  };
 }
