@@ -47,7 +47,6 @@
   systemd.oomd.enable = true;
   services.dbus.enable = true;
   services.gvfs.enable = true;
-  services.tlp.enable = true;
   services.scx = {
     enable = true;
     package = pkgs.scx.rustscheds;
@@ -56,6 +55,7 @@
     enable = true;
     ignoreCpuidCheck = true;
   };
+  services.auto-cpufreq.enable = true;
 
   powerManagement = {
     enable = true;
