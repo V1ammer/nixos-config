@@ -11,7 +11,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
   boot.blacklistedKernelModules = [
     # Obscure network protocols
     "ax25" "netrom" "rose"

@@ -30,7 +30,7 @@
     delta
     google-chrome
     networkmanagerapplet
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     swaynotificationcenter
     telegram-desktop
     v2rayn
