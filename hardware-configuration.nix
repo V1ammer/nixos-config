@@ -61,6 +61,7 @@
       enable = true;
       extraPackages = with pkgs; [ mesa.opencl ];
     };
+    amdgpu.overdrive.enable = true;
   };
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
