@@ -44,6 +44,8 @@
     "amdgpu.dc=1"
   ];
 
+  systemd.services.systemd-udev-settle.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
   systemd.oomd.enable = true;
   services.dbus.enable = true;
   services.gvfs.enable = true;
@@ -51,15 +53,10 @@
     enable = true;
     package = pkgs.scx.rustscheds;
   };
-  services.thermald = {
-    enable = true;
-    ignoreCpuidCheck = true;
-  };
   services.auto-cpufreq.enable = true;
 
   powerManagement = {
     enable = true;
-    powertop.enable = true;
   };
 
   services.greetd = {

@@ -17,26 +17,23 @@
     useTmpfs = true;
   };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/599bff13-534c-4f12-9e70-4543d5b13581";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/599bff13-534c-4f12-9e70-4543d5b13581";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3EAF-57F5";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/3EAF-57F5";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
 
-  fileSystems."/mnt/ubuntu-partition-1" =
-    { device = "/dev/disk/by-uuid/90f85f8b-3e0b-4062-8ad1-72a4dbbf6978";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/ubuntu-partition-2" =
-    { device = "/dev/disk/by-uuid/cc9b0822-fe3e-49af-be3c-6a8f5b385e82";
-      fsType = "ext4";
-    };
+  fileSystems."/mnt/ubuntu-partition-1" = {
+    device = "/dev/disk/by-uuid/90f85f8b-3e0b-4062-8ad1-72a4dbbf6978";
+    fsType = "ext4";
+    options = [ "noauto" "x-systemd.automount" "x-systemd.idle-timeout=1min" ];
+    neededForBoot = false;
+  };
 
   swapDevices = [ ];
 
