@@ -123,6 +123,7 @@
     stdenv.cc.libc
     getent
     getconf
+    gnugrep
     gnused
     gnutar
     gzip
