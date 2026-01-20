@@ -9,9 +9,11 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  nixpkgs.overlays = [inputs.niri.overlays.niri inputs.nix-cachyos-kernel.overlays.pinned];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
   boot.blacklistedKernelModules = [
     # Obscure network protocols
     "ax25" "netrom" "rose"
@@ -190,8 +192,6 @@
     LC_TELEPHONE = "ru_RU.UTF-8";
     LC_TIME = "ru_RU.UTF-8";
   };
-
-  nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   services.xserver.excludePackages = [pkgs.xterm];
 
