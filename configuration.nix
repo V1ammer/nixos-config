@@ -11,7 +11,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
   boot.blacklistedKernelModules = [
     # Obscure network protocols
     "ax25" "netrom" "rose"
@@ -211,10 +211,7 @@
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri_git;
-  };
+  programs.niri.enable = true;
 
   users.users.killua = {
     isNormalUser = true;
@@ -235,7 +232,6 @@
   home-manager.users.killua = {...}: {
     imports = [
       inputs.battery-notifier.homeManagerModule.default
-      inputs.chaotic.homeManagerModules.default
       inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];

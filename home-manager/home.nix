@@ -51,7 +51,6 @@
 
   programs.zed-editor = {
     enable = true;
-    package = pkgs.zed-editor_git;
     extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
     userSettings = {
       helix_mode = true;
@@ -136,15 +135,11 @@
     };
   };
 
-  programs.niri = {
-    package = pkgs.niri_git;
-    settings = import ./niri.nix {config = config;};
-  };
+  programs.niri.settings = import ./niri.nix {config = config;};
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = pkgs.helix_git;
     settings.theme = "tokyonight";
     extraPackages = with pkgs; [
       gcc
