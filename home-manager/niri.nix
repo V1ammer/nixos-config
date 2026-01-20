@@ -2,7 +2,6 @@
   prefer-no-csd = true;
 
   spawn-at-startup = [
-    {command = ["cosmic-notifications"];}
     {command = ["cosmic-panel"];}
   ];
 
