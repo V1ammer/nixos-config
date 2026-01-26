@@ -26,8 +26,6 @@
     "af_802154" "appletalk" "atm" "can" "dccp" "decnet" "econet"
     "firewire-core" "ipx" "n-hdlc" "p8022" "p8023" "psnap"
     "rds" "sctp" "thunderbolt" "tipc" "x25"
-    # Bluetooth
-    #"bluetooth" "btusb" "btrtl" "btintel" "btbcm" "btmtk"
     # Unused sensors
     "kfifo_buf" "industrialio" "industrialio_triggered_buffer" "cm32181"
     "hid_sensor_als" "hid_sensor_hub" "hid_sensor_trigger" "hid_sensor_iio_common"
