@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -153,20 +154,21 @@
     enable = true;
     config.common = {
       default = ["gnome"];
-      "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
+      "org.freedesktop.impl.portal.FileChooser" = ["termfilepickers"];
     };
     extraPortals = [
+      # pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-termfilechooser
     ];
   };
 
-  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
-    [filechooser]
-    env=TERMCMD="${lib.getExe pkgs.alacritty-graphics} -e"
-    cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
-    default_dir=$HOME/Downloads
-  '';
+  services.xdg-desktop-portal-termfilepickers = {
+    enable = true;
+    package = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
+    config = {
+      terminal_command = [(lib.getExe pkgs.alacritty-graphics) "-e"];
+    };
+  };
 
   home.stateVersion = "25.11";
 }

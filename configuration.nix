@@ -230,6 +230,7 @@
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.killua = {...}: {
     imports = [
+      inputs.xdp-termfilepickers.homeManagerModules.default
       inputs.battery-notifier.homeManagerModule.default
       inputs.niri.homeModules.niri
       ./home-manager/home.nix
