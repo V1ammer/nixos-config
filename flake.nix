@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     battery-notifier = {
       url = "github:V1ammer/battery-notifier/fix-battery-id-selector";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +33,6 @@
     homeConfigurations.killua = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        inputs.niri.homeModules.niri
         ./home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};

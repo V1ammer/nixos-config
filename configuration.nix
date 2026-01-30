@@ -5,11 +5,8 @@
   lib,
   ...
 }: {
-  imports = [
-    inputs.home-manager.nixosModules.default
-  ];
-
-  nixpkgs.overlays = [inputs.niri.overlays.niri inputs.nix-cachyos-kernel.overlays.pinned];
+  imports = [inputs.home-manager.nixosModules.default];
+  nixpkgs.overlays = [inputs.nix-cachyos-kernel.overlays.pinned];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -219,10 +216,6 @@
     shell = pkgs.fish;
   };
 
-  # niri-flake adds it on nixos level,Add commentMore actions
-  # but I wish to configure it on home-manager level
-  xdg.portal.enable = false;
-  
   virtualisation.docker.enable = true;
 
   home-manager.backupFileExtension = "backup";
@@ -232,7 +225,6 @@
     imports = [
       inputs.xdp-termfilepickers.homeManagerModules.default
       inputs.battery-notifier.homeManagerModule.default
-      inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];
   };
