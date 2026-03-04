@@ -193,7 +193,7 @@
 
   documentation = {
     nixos.enable = false;
-    man.generateCaches = false;
+    man.cache.enable = false;
   };
 
   security.rtkit.enable = true;
