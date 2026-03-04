@@ -226,6 +226,7 @@
     imports = [
       inputs.xdp-termfilepickers.homeManagerModules.default
       inputs.battery-notifier.homeManagerModule.default
+      inputs.zen-browser.homeModules.twilight
       ./home-manager/home.nix
     ];
   };

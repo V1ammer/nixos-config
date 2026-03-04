@@ -54,6 +54,28 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1772596991,
+        "narHash": "sha256-awJJ4ATy9t8Svrx2z0zAftgXnUaGCFb2Ty0u036CnCQ=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "cd2d0893966c0a5c27345a9a72d0418b42b7e36d",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -229,10 +251,12 @@
     "root": {
       "inputs": {
         "battery-notifier": "battery-notifier",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixpkgs": "nixpkgs_2",
-        "xdp-termfilepickers": "xdp-termfilepickers"
+        "xdp-termfilepickers": "xdp-termfilepickers",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -287,6 +311,29 @@
       "original": {
         "owner": "Guekka",
         "repo": "xdg-desktop-portal-termfilepickers",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772638901,
+        "narHash": "sha256-kzAyU054Mzpnzgx475MgmcjYJXxXWQWBG7LLsYtHXKw=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "75de12ddd50616a3628499ec18b648bceb88eb0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

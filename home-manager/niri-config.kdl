@@ -146,7 +146,7 @@ binds {
     Mod+Shift+T { spawn "Telegram"; }
     Mod+Shift+U { move-workspace-down; }
     Mod+Shift+Up { focus-monitor-up; }
-    Mod+Shift+Z { spawn "zen"; }
+    Mod+Shift+Z { spawn "zen-twilight"; }
     Mod+Space { switch-layout "next"; }
     Mod+T { spawn "alacritty"; }
     Mod+U { focus-workspace-down; }
