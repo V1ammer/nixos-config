@@ -311,19 +311,20 @@
 
   xdg.portal = {
     enable = true;
-    config.common = {
-      default = ["gnome"];
-      "org.freedesktop.impl.portal.FileChooser" = ["termfilepickers"];
+    config = {
+      common = {
+        default = ["gnome"];
+        "org.freedesktop.impl.portal.FileChooser" = ["termfilepickers"];
+      };
     };
     extraPortals = [
-      # pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
     ];
   };
 
   services.xdg-desktop-portal-termfilepickers = {
     enable = true;
-    package = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
+    package = inputs.xdp-termfilepickers.packages.${pkgs.stdenv.hostPlatform.system}.default;
     config = {
       terminal_command = [(lib.getExe pkgs.alacritty-graphics) "-e"];
     };
