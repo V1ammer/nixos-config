@@ -208,7 +208,10 @@
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    useNautilus = false;
+  };
 
   users.users.killua = {
     isNormalUser = true;
