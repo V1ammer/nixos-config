@@ -61,7 +61,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${lib.getExe pkgs.tuigreet} --time --cmd niri-session";
+        command = "${lib.getExe pkgs.tuigreet} --time --cmd niri-session --asterisks";
         user = "greeter";
       };
     };
