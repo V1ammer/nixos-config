@@ -27,6 +27,19 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # catppuccin = {
+    #   url = "github:catppuccin/nix/release-25.11";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.noctalia-qs.follows = "noctalia-qs";
+    # };
+    # noctalia-qs = {
+    #   url = "github:noctalia-dev/noctalia-qs";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
